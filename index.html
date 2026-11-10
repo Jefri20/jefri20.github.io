@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jefri Alrick Fernando | Meta Ads Specialist</title>
+  <meta name="description" content="Meta Ads portfolio: UK and DE e-commerce performance, local lead generation, and attribution case studies by Jefri Alrick Fernando.">
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #171a23;
+      --surface-2: #1f2430;
+      --border: #2a3040;
+      --text: #e6e9f0;
+      --muted: #9aa3b5;
+      --accent: #4f8cff;
+      --accent-2: #36c9a0;
+      --warn: #f5a524;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg); color: var(--text); line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    nav { position: sticky; top: 0; z-index: 10; background: rgba(15,17,23,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    nav .container { display: flex; justify-content: space-between; align-items: center; height: 60px; }
+    nav .logo { font-weight: 700; color: var(--text); }
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav ul a { color: var(--muted); font-size: 14px; }
+    nav ul a:hover { color: var(--text); text-decoration: none; }
+
+    /* Hero */
+    .hero { padding: 96px 0 72px; }
+    .hero .tag { display: inline-block; font-size: 13px; color: var(--accent-2); border: 1px solid var(--accent-2); padding: 4px 12px; border-radius: 999px; margin-bottom: 20px; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; margin-bottom: 16px; }
+    .hero p.lead { color: var(--muted); font-size: 1.15rem; max-width: 680px; }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-top: 40px; }
+    .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+    .stat .num { font-size: 1.8rem; font-weight: 700; color: var(--accent); }
+    .stat .label { font-size: 13px; color: var(--muted); }
+
+    /* Sections */
+    section { padding: 72px 0; border-top: 1px solid var(--border); }
+    section h2 { font-size: 1.8rem; margin-bottom: 8px; }
+    section .sub { color: var(--muted); margin-bottom: 36px; max-width: 720px; }
+    h3.chart-title { font-size: 1.1rem; margin: 32px 0 12px; }
+    h3.chart-title:first-child { margin-top: 0; }
+
+    /* Cards */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+    .card h3 { font-size: 1.05rem; margin-bottom: 10px; }
+    .card ul { list-style: none; color: var(--muted); font-size: 14px; }
+    .card li { padding: 4px 0; }
+    .card li::before { content: "▸ "; color: var(--accent); }
+
+    /* Case studies */
+    .case { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 32px; margin-bottom: 28px; }
+    .case-header { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+    .case h3 { font-size: 1.4rem; }
+    .badge { font-size: 12px; padding: 4px 10px; border-radius: 6px; background: var(--surface-2); color: var(--muted); border: 1px solid var(--border); height: fit-content; }
+    .case h4 { font-size: 0.9rem; color: var(--accent-2); margin: 20px 0 8px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .case p, .case li { color: var(--muted); font-size: 15px; }
+    .case ul { padding-left: 20px; }
+    .case li { margin-bottom: 6px; }
+    .outcomes { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 16px; }
+    .outcome { background: var(--surface-2); border-radius: 10px; padding: 16px; }
+    .outcome .val { font-size: 1.35rem; font-weight: 700; color: var(--accent-2); }
+    .outcome .desc { font-size: 12px; color: var(--muted); }
+
+    /* Bars */
+    .bar-row { display: grid; grid-template-columns: 60px 1fr 70px; align-items: center; gap: 12px; margin-bottom: 8px; font-size: 13px; }
+    .bar-row .m { color: var(--muted); }
+    .bar-track { background: var(--surface-2); border-radius: 6px; height: 14px; overflow: hidden; }
+    .bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); border-radius: 6px; }
+    .bar-row .v { text-align: right; font-weight: 600; }
+
+    /* Table */
+    .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 12px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { padding: 12px 16px; text-align: right; border-bottom: 1px solid var(--border); white-space: nowrap; }
+    th:first-child, td:first-child { text-align: left; }
+    th { background: var(--surface-2); color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+    tr:last-child td { border-bottom: none; }
+    td { color: var(--text); }
+    .note { font-size: 13px; color: var(--muted); margin-top: 12px; }
+
+    /* Process */
+    .process { display: grid; gap: 14px; counter-reset: step; }
+    .step { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; display: flex; gap: 16px; }
+    .step::before { counter-increment: step; content: counter(step); flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .step h4 { font-size: 1rem; margin-bottom: 4px; }
+    .step p { color: var(--muted); font-size: 14px; }
+
+    /* Contact */
+    .contact-links { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 8px; }
+    .btn { display: inline-block; padding: 12px 22px; border-radius: 8px; background: var(--accent); color: #fff; font-weight: 600; font-size: 15px; }
+    .btn.ghost { background: transparent; border: 1px solid var(--border); color: var(--text); }
+    .btn:hover { text-decoration: none; opacity: 0.9; }
+
+    footer { border-top: 1px solid var(--border); padding: 28px 0; color: var(--muted); font-size: 13px; text-align: center; }
+
+    @media (max-width: 720px) {
+      nav ul { display: none; }
+      .hero { padding: 64px 0 48px; }
+      .case { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <span class="logo">Jefri Alrick Fernando</span>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#cases">Case Studies</a></li>
+      <li><a href="#performance">Performance</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <span class="tag">Open to Meta Ads roles</span>
+    <h1>Meta Ads Specialist<br>Performance, Scaling &amp; Audience Strategy</h1>
+    <p class="lead">I manage Meta campaigns for e-commerce brands in the UK and Germany, and for local service businesses in Sri Lanka. My work focuses on profitable scaling, frequency control, lead generation, and attribution accuracy across platforms.</p>
+    <div class="stats">
+      <div class="stat"><div class="num">6.6x</div><div class="label">Peak ROAS, UK account (Feb 2026)</div></div>
+      <div class="stat"><div class="num">−43%</div><div class="label">Cost per purchase, DE account, Jan to Oct</div></div>
+      <div class="stat"><div class="num">4.0x</div><div class="label">Cost-per-lead gap between best and weakest lead campaign, local service</div></div>
+      <div class="stat"><div class="num">3 markets</div><div class="label">UK, Germany, and Sri Lanka</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <h2>About</h2>
+    <p class="sub">Digital advertising specialist working across Meta Ads and Google Ads. I combine campaign execution with analysis, so each decision is tied to a measurable outcome.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Core focus</h3>
+        <ul>
+          <li>Prospecting and retargeting structure</li>
+          <li>Catalogue and dynamic product ads</li>
+          <li>Lead generation (forms and messaging)</li>
+          <li>Creative testing (video and carousel)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Analysis</h3>
+        <ul>
+          <li>Monthly performance reporting</li>
+          <li>Frequency and fatigue monitoring</li>
+          <li>Attribution and duplicate-conversion review</li>
+          <li>Market-level reporting (UK, DE, EU)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Tools</h3>
+        <ul>
+          <li>Meta Ads Manager and reporting</li>
+          <li>Google Ads</li>
+          <li>Google Sheets and Excel</li>
+          <li>Product feed optimisation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="container">
+    <h2>Case Studies</h2>
+    <p class="sub">Selected work with the approach, decisions, and outcomes. Figures are indexed, ratios, or percentages to protect client confidentiality.</p>
+
+    <article class="case">
+      <div class="case-header">
+        <h3>Case 1: Scaling a UK e-commerce Meta account on a warm audience</h3>
+        <span class="badge">UK | Meta Ads | Jan to Oct 2026</span>
+      </div>
+      <h4>Challenge</h4>
+      <p>The brand already had strong organic and returning-customer demand. Spending heavily into the same audience pool raised frequency, and awareness campaigns added cost without meaningful new reach. Performance also followed a seasonal pattern that needed its own baseline.</p>
+      <h4>Actions</h4>
+      <ul>
+        <li>Reviewed awareness and ThruPlay campaigns and kept them out of the performance view.</li>
+        <li>Excluded repeat customers from prospecting audiences to reduce wasted impressions and bring frequency down.</li>
+        <li>Concentrated budget on broad catalogue and lookalike campaigns, which drove most purchases.</li>
+        <li>Tracked frequency, CPC, CPM, and ROAS monthly to separate seasonal lift from structural change.</li>
+      </ul>
+      <h4>Outcomes</h4>
+      <div class="outcomes">
+        <div class="outcome"><div class="val">6.6x → 6.5x</div><div class="desc">ROAS, Feb to Oct (held above 6x in peak months)</div></div>
+        <div class="outcome"><div class="val">+123%</div><div class="desc">Purchase value, Jun to Oct, vs. +38% spend</div></div>
+        <div class="outcome"><div class="val">5.6 → 5.4</div><div class="desc">Frequency, Sep to Oct, after audience exclusions</div></div>
+        <div class="outcome"><div class="val">Stable</div><div class="desc">CPC and CPM, Jun to Oct</div></div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-header">
+        <h3>Case 2: Rebuilding a German Meta account and lowering cost per purchase</h3>
+        <span class="badge">DE | Meta Ads | Jan to Oct 2026</span>
+      </div>
+      <h4>Challenge</h4>
+      <p>The German account had low traffic and inconsistent results. Spring spend was high, ROAS fell below 2, and frequency rose in the higher-spend months. Campaign structure had grown fragmented, which made the performance picture hard to read.</p>
+      <h4>Actions</h4>
+      <ul>
+        <li>Judged performance on rolling three-month averages, since monthly purchase counts were small.</li>
+        <li>Reduced spend and consolidated campaigns around the strongest audiences.</li>
+        <li>Monitored a small, high-frequency add-to-cart audience separately, with exclusions and creative refresh planned.</li>
+        <li>Reported Germany separately from wider European campaigns so the baseline stayed clear.</li>
+      </ul>
+      <h4>Outcomes</h4>
+      <div class="outcomes">
+        <div class="outcome"><div class="val">1.2 → 4.2</div><div class="desc">ROAS, January to October</div></div>
+        <div class="outcome"><div class="val">−43%</div><div class="desc">Cost per purchase, Jan to Oct</div></div>
+        <div class="outcome"><div class="val">2.8 to 3.3</div><div class="desc">Account frequency, Jun to Oct</div></div>
+        <div class="outcome"><div class="val">Stable</div><div class="desc">Account CPC and CPM from June</div></div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-header">
+        <h3>Case 3: Attribution review for duplicated conversions across Meta and Google</h3>
+        <span class="badge">Meta + Google Ads | Attribution</span>
+      </div>
+      <h4>Challenge</h4>
+      <p>Meta and Google Ads were both claiming the same purchases, which inflated reported performance and made true sales growth hard to judge. Meta spend also showed delivery gaps from payment issues, which needed to be read separately from performance.</p>
+      <h4>Actions</h4>
+      <ul>
+        <li>Changed the Meta attribution setting to engagement and click, reducing double-counting with Google Ads.</li>
+        <li>Recognised that the change lowers reported Meta purchases, so Meta results are read as a relative trend rather than a full sales total.</li>
+        <li>Identified payment interruptions as a source of delivery gaps and planned to note them alongside monthly spend.</li>
+      </ul>
+      <h4>Outcomes</h4>
+      <div class="outcomes">
+        <div class="outcome"><div class="val">Lower</div><div class="desc">Reported Meta purchases after the change (less double-counting)</div></div>
+        <div class="outcome"><div class="val">Next step</div><div class="desc">Reconcile Meta and Google totals against website orders</div></div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-header">
+        <h3>Case 4: Lead generation for a local service business, Sri Lanka</h3>
+        <span class="badge">Meta Ads | Lead Forms + Messaging | 2026</span>
+      </div>
+      <h4>Challenge</h4>
+      <p>A local service business needed a steady flow of enquiries from a small market, where audience size limits how far cost can be pushed down. Lead-form costs varied widely between campaigns, so the question was which creative and audience to keep.</p>
+      <h4>Actions</h4>
+      <ul>
+        <li>Compared lead-form and messaging campaigns on cost per result rather than volume alone.</li>
+        <li>Moved budget toward the lowest-cost messaging creative, which cost about one-third as much per conversation as the weakest messaging campaign.</li>
+        <li>Flagged the highest-cost lead-form campaign for creative and audience review.</li>
+      </ul>
+      <h4>Outcomes</h4>
+      <div class="outcomes">
+        <div class="outcome"><div class="val">4.0x</div><div class="desc">Cost per lead gap, best vs. weakest lead-form campaign</div></div>
+        <div class="outcome"><div class="val">~1/3</div><div class="desc">Cost per conversation, best vs. weakest messaging campaign</div></div>
+        <div class="outcome"><div class="val">Higher</div><div class="desc">CPC and CPM than larger markets, typical for a small audience</div></div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-header">
+        <h3>Case 5: Traffic and messaging campaigns for a local business, 2025</h3>
+        <span class="badge">Meta Ads | Traffic + Messaging | 2025</span>
+      </div>
+      <h4>Challenge</h4>
+      <p>The account ran several objectives at once: link traffic, messaging, and reach. Blended cost figures would have hidden the real performance of each goal, so each needed to be judged separately.</p>
+      <h4>Actions</h4>
+      <ul>
+        <li>Reported each objective separately instead of blending traffic, messaging, and reach into one cost figure.</li>
+        <li>Compared cost per link click across campaigns and kept the lowest-cost traffic setups running.</li>
+        <li>Used low frequency as a signal that the audience had room to scale before fatigue became a risk.</li>
+      </ul>
+      <h4>Outcomes</h4>
+      <div class="outcomes">
+        <div class="outcome"><div class="val">1.38</div><div class="desc">Average frequency, low saturation</div></div>
+        <div class="outcome"><div class="val">~1/3</div><div class="desc">Cost per link click, lowest vs. highest campaign</div></div>
+        <div class="outcome"><div class="val">Separate</div><div class="desc">Traffic, messaging, and reach reported on their own</div></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="performance">
+  <div class="container">
+    <h2>Monthly Performance</h2>
+    <p class="sub">UK and DE Meta accounts, 2026. Bars show indexed or ratio values; the UK table shows ratios and actual CPC and CPM, with spend and revenue indexed (June = 100).</p>
+
+    <h3 class="chart-title">UK: ROAS by month, January to October 2026</h3>
+    <div id="uk-bars"></div>
+
+    <h3 class="chart-title">DE: Cost per purchase (index, January = 100)</h3>
+    <div id="de-bars"></div>
+
+    <h3 class="chart-title">UK monthly summary</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Month</th><th>Spend index</th><th>Revenue index</th><th>ROAS</th><th>CPC</th><th>CPM</th><th>Frequency</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>January</td><td>98</td><td>82</td><td>3.4</td><td>£0.16</td><td>£4.10</td><td>2.56</td></tr>
+          <tr><td>February</td><td>49</td><td>81</td><td>6.6</td><td>£0.18</td><td>£4.30</td><td>3.35</td></tr>
+          <tr><td>March</td><td>66</td><td>98</td><td>6.0</td><td>£0.18</td><td>£4.45</td><td>3.52</td></tr>
+          <tr><td>April</td><td>60</td><td>95</td><td>6.4</td><td>£0.18</td><td>£4.35</td><td>3.53</td></tr>
+          <tr><td>May</td><td>111</td><td>125</td><td>4.5</td><td>£0.22</td><td>£4.86</td><td>3.83</td></tr>
+          <tr><td>June</td><td>100</td><td>100</td><td>4.0</td><td>£0.26</td><td>£5.86</td><td>3.65</td></tr>
+          <tr><td>July</td><td>105</td><td>122</td><td>4.7</td><td>£0.24</td><td>£5.28</td><td>4.25</td></tr>
+          <tr><td>August</td><td>122</td><td>175</td><td>5.8</td><td>£0.23</td><td>£5.37</td><td>4.51</td></tr>
+          <tr><td>September</td><td>130</td><td>211</td><td>6.5</td><td>£0.25</td><td>£5.64</td><td>5.59</td></tr>
+          <tr><td>October</td><td>138</td><td>223</td><td>6.5</td><td>£0.25</td><td>£5.66</td><td>5.36</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Attribution settings changed during the period, and the change lowers reported Meta purchases. Frequency rose from 2.6 in January to 5.6 in September, then eased slightly in October. Seasonal demand also contributed to autumn results.</p>
+  </div>
+</section>
+
+<section id="process">
+  <div class="container">
+    <h2>How I Work</h2>
+    <p class="sub">A repeatable approach I use on every account.</p>
+    <div class="process">
+      <div class="step"><div><h4>Audit the account</h4><p>Check structure, audience overlap, attribution settings, and tracking before changing any budget.</p></div></div>
+      <div class="step"><div><h4>Set a baseline</h4><p>Compare against seasonal norms and rolling averages so changes aren't misread.</p></div></div>
+      <div class="step"><div><h4>Act on signals</h4><p>Read frequency, cost per result, and CTR trends together, not any single metric alone.</p></div></div>
+      <div class="step"><div><h4>Document and reconcile</h4><p>Log attribution and campaign changes alongside the data, and reconcile platform totals against actual orders or leads.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2>Let's Connect</h2>
+    <p class="sub">Open to Meta Ads roles and freelance work. Happy to walk through case studies in more detail.</p>
+    <div class="contact-links">
+      <a class="btn" href="mailto:jefrialrick01@gmail.com">Email me</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/jefri-alrick-01754b1a1" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 Jefri Alrick Fernando. Figures are indexed, ratios, or percentages to protect client confidentiality.
+  </div>
+</footer>
+
+<script>
+  const ukRoas = [
+    { m: "Jan", v: 3.4 }, { m: "Feb", v: 6.6 }, { m: "Mar", v: 6.0 }, { m: "Apr", v: 6.4 },
+    { m: "May", v: 4.5 }, { m: "Jun", v: 4.0 }, { m: "Jul", v: 4.7 }, { m: "Aug", v: 5.8 },
+    { m: "Sep", v: 6.5 }, { m: "Oct", v: 6.5 }
+  ];
+  const deCpaIndex = [
+    { m: "Jan", v: 100 }, { m: "Feb", v: 70 }, { m: "Mar", v: 88 }, { m: "Apr", v: 99 },
+    { m: "May", v: 108 }, { m: "Jun", v: 95 }, { m: "Jul", v: 60 }, { m: "Aug", v: 63 },
+    { m: "Sep", v: 65 }, { m: "Oct", v: 57 }
+  ];
+
+  function renderBars(containerId, data, maxValue, formatter) {
+    const el = document.getElementById(containerId);
+    data.forEach(d => {
+      const pct = Math.min((d.v / maxValue) * 100, 100);
+      const row = document.createElement("div");
+      row.className = "bar-row";
+      row.innerHTML = `
+        <span class="m">${d.m}</span>
+        <div class="bar-track"><div class="bar-fill" style="width:${pct}%"></div></div>
+        <span class="v">${formatter(d.v)}</span>`;
+      el.appendChild(row);
+    });
+  }
+
+  renderBars("uk-bars", ukRoas, 7, v => v.toFixed(1) + "x");
+  renderBars("de-bars", deCpaIndex, 110, v => v);
+</script>
+
+</body>
+</html>
